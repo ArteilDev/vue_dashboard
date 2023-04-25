@@ -1,0 +1,280 @@
+.header
+    position: fixed
+    top: 0
+    left: 265px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1rem 1.5rem
+    box-sizing: border-box
+    width: calc( 100% - 265px )
+    background-color: $color-white
+    transition: $trans
+    z-index: 5
+    &__user
+        display: flex
+        align-items: center
+        color: $color-black
+        &_avatar
+            font-size: 30px
+            margin-right: 1rem
+        &_name
+            font-weight: 700
+
+.sidebar-toggler
+    font-size: 24px
+
+.badge
+    padding: 6px
+    border-radius: $border-radius
+    & i
+        line-height: 23px
+        font-weight: 700
+    &_success
+        color: $color-success
+        background-color: #EBFAF5
+    &_warning
+        color: $color-warning
+        background-color: #FFF7EF
+    &_danger
+        color: $color-danger
+        background-color: #FEEEEF
+    &_primary
+        color: $color-primary
+        background-color: #ECF8FF
+    &_info
+        color: $color-info
+        background-color: #F2F4FE
+    &_outline_warning
+        color: $color-warning
+        border: 1px solid $color-warning
+    &_outline_danger
+        color: $color-danger
+        border: 1px solid $color-danger
+
+.badge-sm
+    position: absolute
+    top: 50%
+    right: 0
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    transform: translateY(-50%)
+    &_success
+        background-color: $color-success
+    &_warning
+        background-color: $color-warning
+    &_danger
+        background-color: $color-danger
+    &_primary
+        background-color: $color-primary
+    &_info
+        background-color: $color-info
+
+
+.chart
+    &-container
+        position: relative
+        grid-row-start: 1
+        grid-row-end: 5
+        display: flex
+        align-items: center
+        padding: 2rem
+        background-color: $color-white
+        border-radius: $border-radius
+        box-sizing: border-box
+    &-error
+        position: absolute
+        margin-left: auto
+        margin-right: auto
+        left: 0
+        right: 0
+        text-align: center
+        color: $color-danger
+    &-loading
+        width: 100%
+        height: 100%
+
+.modal-container
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    margin: 0
+    padding: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.4)
+    z-index: 10
+
+.modal
+    position: fixed
+    display: flex
+    flex-direction: column
+    top: 50%
+    left: 50%
+    max-width: 50%
+    transform: translate(-50%, -50%)
+    text-align: center
+    background-color: $color-white
+    box-sizing: border-box
+    z-index: 15
+    &__header
+        display: flex
+        justify-content: space-between
+        padding: 1.5rem
+        font-size: $fs-large
+        font-weight: 700
+        border-bottom: 1px solid $color-border
+    &__body
+        padding: 1.5rem
+    &__errors
+        padding: .2rem
+        margin-top: .5rem
+        background-color: #FEEEEF
+        text-align: center
+        font-size: 12px
+        border-radius: $border-radius
+        box-sizing: border-box
+        color: $color-danger
+        font-weight: 500
+    &__footer
+        display: flex
+        justify-content: flex-end
+        gap: 10px
+        padding: 1.5rem
+        border-top: 1px solid $color-border
+
+.select
+    padding: .5rem
+    min-width: 350px
+    font-size: 14px
+    color: $color-grey-6
+    border: 1px solid $color-grey-4
+    border-radius: $border-radius
+    transition: $trans
+    &:hover
+        outline: 0
+        box-shadow: 0 0 0 0.2rem rgba(17, 161, 253, 0.25)
+    &:focus-visible
+        outline: 0
+
+.pagination
+    display: flex
+    align-items: center
+
+.page
+    &-item
+        border-radius: $border-radius
+        transition: $trans
+        &.active
+            color: $color-white
+            background-color: $color-primary
+        &.disabled
+            color: #22334542
+        &:not(.active,.disabled):hover
+            background-color: $color-grey-2
+    &-link
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 8px 16px
+        text-align: center
+        cursor: pointer
+
+
+.popup
+    position: fixed
+    padding: 1rem 2rem
+    top: 12%
+    left: 50%
+    max-width: 50%
+    width: 40%
+    transform: translate(-50%, -50%)
+    text-align: center
+    font-weight: 500
+    border-radius: $border-radius
+    box-sizing: border-box
+    z-index: 100
+    &_danger
+        color: $color-danger
+        background-color: #FEEEEF
+    &_success
+        color: $color-success
+        background-color: #EBFAF5
+    &__close
+        position: absolute
+        right: 1rem
+        top: 50%
+        margin: auto
+        transform: translate(-50%, -50%)
+        cursor: pointer
+
+
+.alert
+    padding: 1rem 2rem
+    width: 100%
+    text-align: center
+    border-radius: $border-radius
+    box-sizing: border-box
+    &_danger
+        color: $color-danger
+        font-weight: 500
+        background-color: #FEEEEF
+
+.v-popper--theme-tooltip .v-popper__inner
+    background: #fff
+    color: black
+    padding: 24px
+    border-radius: 6px
+    border: 1px solid #ddd
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1)
+
+
+// Анимация загрузки    
+$offset: 187
+$duration: 1.4s
+
+.loader
+    position: fixed
+    top: 40%
+    left: 50%
+
+.spinner
+    animation: rotator $duration linear infinite
+
+@keyframes rotator
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(270deg)
+
+.path 
+    stroke-dasharray: $offset
+    stroke-dashoffset: 0
+    transform-origin: center
+    animation: dash $duration ease-in-out infinite, colors ($duration*4) ease-in-out infinite
+
+@keyframes colors 
+    0%
+        stroke: $color-primary
+    25%
+        stroke: $color-info
+    50%
+        stroke: $color-sidebar
+    75%
+        stroke: $color-grey-6
+    100%
+        stroke: $color-primary
+
+@keyframes dash 
+    0%
+        stroke-dashoffset: $offset 
+    50%
+        stroke-dashoffset: calc($offset / 4)
+        transform: rotate(135deg)
+    
+    100% 
+        stroke-dashoffset: $offset
+        transform: rotate(450deg)
+    

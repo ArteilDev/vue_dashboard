@@ -1,0 +1,64 @@
+@media all and (not (max-width: 600px))
+    .sidebar_small
+        transform: translate(-300px)
+    
+@media (max-width: 1600px)
+    .page.active
+        & .grid-tpa_wide
+            grid-template-columns: minmax(950px, 1fr) repeat(2, minmax(150px, 1fr))
+
+    .grid-tpa_wide
+        grid-template-columns: minmax(700px, 1fr) repeat(2, minmax(150px, 1fr))
+
+
+@media (max-width: 1400px)
+    .page.active
+        & .grid-tpa_wide
+            grid-template-columns: minmax(700px, 1fr) repeat(2, minmax(150px, 1fr))
+
+    .grid-tpa_wide
+        grid-template-columns: minmax(600px, 1fr) repeat(2, minmax(150px, 1fr))
+
+@media (max-width: 1250px)
+    .grid-tpa_wide
+        display: none
+    
+    .grid-tpa_small
+        display: grid
+
+    .chart-container
+        grid-column-start: 1
+        grid-column-end: -1
+
+@media (max-width: 900px)
+    .sidebar:not(.sidebar_small)
+        width: 73px
+        & .sidebar__links_name
+            opacity: 0
+            pointer-events: none
+        & .sidebar__brand
+            opacity: 0
+
+    .dashboard
+        left: 73px
+        width: calc( 100% - 73px )
+        & .header
+            left: 73px
+            width: calc( 100% - 73px )  
+    #userEdit_button
+        content: 'Ред.'  
+
+@media (max-width: 800px)
+    .grid-tpa_small
+        grid-template-columns: 1fr 1fr
+
+@media only screen and (max-width: 600px)
+    .sidebar_small:not(.hidden)
+        transform: translate(0)
+
+    .dashboard
+        left: 0
+        width: 100%
+        & .header
+            left: 0
+            width: 100%

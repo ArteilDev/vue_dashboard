@@ -1,0 +1,49 @@
+
+.list-container
+    background-color: $color-white
+    &__title
+        display: flex
+        justify-content: space-between
+        align-items: baseline
+        padding: 1rem 1.5rem
+        font-size: $fs-large
+        font-weight: 700
+        border-bottom: 1px solid $color-border
+        @include respond (phone)
+            flex-direction: column
+            align-items: flex-start
+        & span
+            @include respond (phone)
+            margin-bottom: 1rem
+        & select
+            @include respond (phone)
+                width: 100%
+                min-width: 0
+    &__header
+        margin: 0
+        padding: 1rem 1.5rem
+        color: $color-grey-5
+        font-weight: 700
+        border-bottom: 1px solid $color-border
+    &__footer
+        display: flex
+        justify-content: flex-end
+        padding: 1rem 1.5rem
+        font-weight: 700
+
+.list-item
+    margin: 0
+    padding: 1rem 1.5rem
+    border-bottom: 1px solid $color-border
+    &:hover
+        background-color: $color-grey-1
+        cursor: pointer
+    &__count
+        display: inline-block
+        padding: .25rem .5rem
+        margin-top: .25rem
+        font-weight: 500
+        border-radius: $border-radius
+        background-color: $color-grey-3
+    &__roles
+        max-width: 200px
