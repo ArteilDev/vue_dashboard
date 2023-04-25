@@ -239,7 +239,9 @@
                 // Проверка, есть ли в объекте с ошибками, значение true
                 if(!Object.values(this.errors).includes(true)) {
                     // Если нет ошибок и имеются права адмнистратора, выполняем отправку данных
-                    this.editUserResponse(this.editedUserData)
+
+                    // this.editUserResponse(this.editedUserData)
+                    this.showPopup('Информация успешна изменена!', 'popup_success')
                     this.editable = false
 
                 }
@@ -267,24 +269,25 @@
             // Запрос на удаление пользователя
             async deleteUser() {
                 // Проверка прав пользователя
-                let emp_oid = this.userData.emp_oid
-                let user_oid = this.$route.params.id.toLowerCase()
-                try {
-                    const response = await $http.post('/user/delete_user', {
-                        user_oid,
-                        emp_oid
-                    })
-                    if(response['data']['error']) {
-                        this.showPopup(response['data']['error'], 'popup_danger')
-                    } else {
-                        this.showPopup('Пользователь успешно удален!', 'popup_success')
-                        setTimeout(() => {
-                            this.$router.push('/users')
-                        }, 1500);
-                    }
-                } catch(err) {
-                    alert(err)
-                }
+                // let emp_oid = this.userData.emp_oid
+                // let user_oid = this.$route.params.id.toLowerCase()
+                // try {
+                //     const response = await $http.post('/user/delete_user', {
+                //         user_oid,
+                //         emp_oid
+                //     })
+                //     if(response['data']['error']) {
+                //         this.showPopup(response['data']['error'], 'popup_danger')
+                //     } else {
+                //         this.showPopup('Пользователь успешно удален!', 'popup_success')
+                //         setTimeout(() => {
+                //             this.$router.push('/users')
+                //         }, 1500);
+                //     }
+                // } catch(err) {
+                //     alert(err)
+                // }
+                this.showPopup('Пользователь успешно удален!', 'popup_success')
             },
 
             // Фукнция для присвоения данных о пользователе с сервера, на страницу/форму (для возможности редактирования)

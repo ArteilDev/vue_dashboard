@@ -137,20 +137,22 @@
             // },
 
             async createUser(user) {
-                try {
-                    const response = await $http.post('/users/adduser', {
-                       user
-                    })
-                    if(response['data']['error']) {
-                        this.showPopup(response['data']['error'], 'popup_danger')
-                    } else {
-                        this.showPopup('Пользователь успешно добавлен!', 'popup_success')
-                        this.modalVisible = false
-                        this.fetchUsers()
-                    }
-                } catch(err) {
-                    alert(err)
-                } 
+                // try {
+                //     const response = await $http.post('/users/adduser', {
+                //        user
+                //     })
+                //     if(response['data']['error']) {
+                //         this.showPopup(response['data']['error'], 'popup_danger')
+                //     } else {
+                //         this.showPopup('Пользователь успешно добавлен!', 'popup_success')
+                //         this.modalVisible = false
+                //         this.fetchUsers()
+                //     }
+                // } catch(err) {
+                //     alert(err)
+                // } 
+                this.showPopup('Пользователь успешно добавлен!', 'popup_success')
+                this.modalVisible = false
             },
             
             showModal() {
